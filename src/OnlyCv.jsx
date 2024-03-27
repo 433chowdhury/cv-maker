@@ -1,51 +1,34 @@
-import React, { useCallback, useMemo, useRef, useState } from "react";
+import React from "react";
 import { twMerge } from "tailwind-merge";
-import { useLocation } from "react-router-dom";
-import Contact from "./Contact";
+import PropTypes from "prop-types";
+import Contact from "./components/Contact";
+import Education from "./components/Education";
+import Skills from "./components/Skills";
 
 function OnlyCv({ className }) {
-  const location = useLocation();
-
-  const fileInputRef = useRef(null);
-
-  const [imageFile, setImageFile] = useState(null);
-
-  const handleFileChange = useCallback((e) => {
-    const { files } = e.target;
-    setImageFile(files.length ? URL.createObjectURL(files[0]) : null);
-  }, []);
-
-  const handleImageClick = useCallback(() => {
-    fileInputRef.current?.click?.();
-  }, []);
-
-  const pageForPrinting = useMemo(() => {
-    return location.pathname === "/only-cv";
-  }, [location]);
-
   //   do everything in em
   return (
     <div
       className={twMerge(
-        pageForPrinting && "text-[1.6vw]",
-        !pageForPrinting && "text-[1rem]",
-        "relative aspect-[1_/_1.40963855] flex flex-col items-stretch",
+        "text-[1rem] relative w-full h-[10in] max-w-[7.3in] flex flex-col items-stretch text-black",
         "bg-white",
         className
       )}
     >
       {/* cv details */}
-      <div className="absolute inset-0 flex my-[1em] mx-[1.2em]">
-        <div className="w-[37%] bg-[rgba(226,220,204,255)] flex flex-col gap-[2em]">
+      <div className="absolute inset-0 flex mx-[1.2em] my-[1em]">
+        <div className="w-[37%] bg-[rgba(226,220,204,255)] flex flex-col gap-[2.5em]">
           <Contact />
+          <Education />
+          <Skills />
         </div>
         <div className="flex-1"></div>
       </div>
-      <header className="relative z-10 h-[14.6em] my-[3em] ml-[3em] mr-[2.5em] bg-transparent flex gap-9 justify-start items-center">
+      <header className="relative z-10 h-[15.6em] my-[3.5em] ml-[3em] mr-[2.5em] bg-transparent flex gap-9 justify-start items-center">
         {/* info */}
-        <div className="bg-[rgba(251,248,242,255)] absolute right-0 h-full w-[84%] -ml-[32%]">
+        <div className="bg-[rgba(251,248,242,255)] absolute right-0 h-full w-[84%] -ml-[16%]">
           {/* name + designation */}
-          <div className="mt-[3.5em] mr-[2em] mb-[2em] ml-[9em] text-black">
+          <div className="mt-[3.5em] mr-[2em] mb-[2em] ml-[10em] text-black">
             <p className="text-[1.6em] font-semibold leading-[1.5em]">
               TAWHIDUL ISLAM
             </p>
@@ -60,24 +43,12 @@ function OnlyCv({ className }) {
           </div>
         </div>
         {/* image */}
-        <div className="absolute left-[1em] w-[10em] bg-white aspect-square rounded-full flex justify-center items-center">
-          <input
-            ref={fileInputRef}
-            type="file"
-            onChange={handleFileChange}
-            className={twMerge(
-              "absolute top-1/2 -translate-y-1/2 w-full",
-              imageFile && "invisible"
-            )}
+        <div className="absolute left-[1em] w-[11em] bg-white aspect-square rounded-full flex justify-center items-center">
+          <img
+            src={`${process.env.PUBLIC_URL}/images/picture2.jpg`}
+            className="w-[91%] aspect-square rounded-full object-cover"
+            alt="user-img"
           />
-          {imageFile && (
-            <img
-              src={imageFile}
-              className="w-[91%] aspect-square rounded-full object-cover"
-              alt="user-img"
-              onClick={handleImageClick}
-            />
-          )}
         </div>
       </header>
       <section className="flex-1 flex"></section>
@@ -85,5 +56,9 @@ function OnlyCv({ className }) {
     </div>
   );
 }
+
+OnlyCv.propTypes = {
+  className: PropTypes.string,
+};
 
 export default OnlyCv;
