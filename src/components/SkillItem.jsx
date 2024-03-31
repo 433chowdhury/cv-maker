@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { leftPanelText } from "../OnlyCv";
 
 function SkillItem({ data: { name, points } }) {
   return (
     <div className="flex justify-between">
-      <p className="text-[0.6em]">{name}</p>
+      <p className={leftPanelText}>{name}</p>
       <div className="flex gap-[0.3em]">
         {Array(5)
           .fill(" ")

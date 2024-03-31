@@ -4,8 +4,8 @@ import SkillItem from "./SkillItem";
 function Skills() {
   return (
     <div className="pl-[2em] pr-[2em]">
-      <span className="text-[1.3em] font-bold">Skills</span>
-      <div className="mt-[1em] flex flex-col gap-[0.3em]">
+      <span className="text-[1.3em] font-semibold font-roboto">Skills</span>
+      <div className="mt-[1em] flex flex-col gap-[0.7em]">
         {skills.map((item, index) => {
           return <SkillItem key={index} data={item} />; // NOSONAR
         })}
@@ -25,10 +25,18 @@ const skills = [
   },
   {
     name: "Tailwind",
-    points: 4,
+    points: 5,
   },
   {
     name: "NextJs",
+    points: 4,
+  },
+  {
+    name: "Socket",
+    points: 3,
+  },
+  {
+    name: "Web Worker",
     points: 4,
   },
 ];
