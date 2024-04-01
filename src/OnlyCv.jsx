@@ -12,7 +12,7 @@ function OnlyCv({ className }) {
   return (
     <div
       className={twMerge(
-        "text-[1rem] text-[#221e1c] font-normal font-public-sans relative w-full h-[10in] max-w-[7.3in] flex flex-col items-stretch",
+        "text-[1rem] text-[#221e1c] font-normal font-roboto relative w-full h-[10in] max-w-[7.3in] flex flex-col items-stretch",
         "bg-white",
         className
       )}
@@ -34,21 +34,20 @@ function OnlyCv({ className }) {
         <div className="bg-[rgba(251,248,242,255)] absolute right-0 h-full w-[84%] -ml-[16%]">
           {/* name + designation */}
           <div className="mt-[2.4em] mr-[2em] mb-[2em] ml-[9em] text-black">
-            <p className="text-[1.6em] font-semibold leading-[1.5em]">
+            <p className="text-[1.6em] font-bold font-public-sans leading-[1.5em]">
               TAWHIDUL ISLAM
             </p>
-            <p className="text-[1em] mt-[0.1em] font-roboto leading-[1em] text-neutral-600 tracking-wider">
+            <p className="text-[1em] mt-[0.1em] leading-[1em] text-neutral-600 tracking-wider">
               Software Engineer
             </p>
             {/* summery */}
-            <p className="text-[0.7em] mt-[1.6em] text-neutral-700">
-              lorem ipsam lorem ipsam lorem ipsam lorem ipsam lorem ipsam lorem
-              ipsam lorem ipsam lorem ipsam lorem ipsam lorem ipsam lorem ipsam{" "}
+            <p className="text-[0.7em] mt-[1.6em] font-medium text-justify font-public-sans text-neutral-700">
+              {personalSummery}
             </p>
           </div>
         </div>
         {/* image */}
-        <div className="absolute left-[1.6em] w-[9.4em] bg-white aspect-square rounded-full flex justify-center items-center">
+        <div className="absolute left-[1.3em] w-[10em] bg-white aspect-square rounded-full flex justify-center items-center">
           <img
             src={`${process.env.PUBLIC_URL}/images/picture2.jpg`}
             className="w-[91%] aspect-square rounded-full object-cover"
@@ -62,8 +61,11 @@ function OnlyCv({ className }) {
   );
 }
 
-export const leftPanelText = 'text-[0.65em] leading-[1.1]'
-export const rightPanelText = 'text-[0.72em] leading-[1.5]'
+export const leftPanelText = "text-[0.65em] leading-[1.1]";
+export const rightPanelText = "text-[0.7em] leading-[1.5]";
+
+const personalSummery =
+  "With working experience of more than 3 years, I am passionate about Software Development that deliver performance, elegance and robustness. Have a keen eye for details, comply with time constrains and provide deliverables as promised.";
 
 OnlyCv.propTypes = {
   className: PropTypes.string,

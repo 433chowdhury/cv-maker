@@ -4,10 +4,10 @@ import ProjectItem from "./ProjectItem";
 function ProjectsOverview() {
   return (
     <div className="px-[2em]">
-      <span className="text-[1.3em] font-semibold font-roboto">
+      <span className="text-[1.3em] font-bold font-public-sans ">
         Top Projects
       </span>
-      <div className="mt-[0.7em] flex flex-col gap-[1em] ">
+      <div className="mt-[1em] flex flex-col gap-[1em] ">
         {projects.map((item, index) => {
           return <ProjectItem key={index} data={item} />; // NOSONAR
         })}
@@ -21,13 +21,13 @@ const projects = [
     name: "Tourbot",
     summery: "Admin panel for managing tours",
     description:
-      "Created functionality for managing bookings, vendors, agencies. Tech stack: React, Tailwind, Redux, Web Workers.",
+      "Created functionality for managing bookings, vendors, agencies. Tech stack: React, Tailwind, Redux, Web Workers, Spring Boot.",
   },
   {
     name: "Foorum",
     summery: "Social media & Learning platform",
     description:
-      "Implemented user login, video player, photo/video carousel, rich text editor. Tech stack: TypeScript, React, DraftJs, Socket etc.",
+      "Implemented user login, video player, photo/video carousel, rich text editor and more. Tech stack: TypeScript, React, DraftJs, Socket etc.",
   },
   {
     name: "Bolt+ TV",

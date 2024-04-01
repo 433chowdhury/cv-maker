@@ -4,7 +4,7 @@ import ExperienceItem from "./ExperienceItem";
 function Experience() {
   return (
     <div className="mt-[16em] px-[2em]">
-      <span className="text-[1.3em] font-semibold font-roboto">Experience</span>
+      <span className="text-[1.3em] font-bold font-public-sans ">Experience</span>
       <div className="mt-[1em] flex flex-col gap-[0.7em]">
         {experiences.map((experience) => {
           return <ExperienceItem key={experience.title} data={experience} />;

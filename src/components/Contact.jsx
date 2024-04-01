@@ -6,7 +6,7 @@ import { leftPanelText } from "../OnlyCv";
 function Contact() {
   return (
     <div className="mt-[16em] pl-[2em] pr-[1em]">
-      <span className="text-[1.3em] font-semibold font-roboto">Contact</span>
+      <span className="text-[1.3em] font-bold font-public-sans">Contact</span>
       <div className="mt-[1em] flex flex-col gap-[0.7em]">
         <a href="tel:+8801758806878" className={leftPanelText}>
           <div className="flex items-center gap-[0.7em]">
@@ -18,10 +18,7 @@ function Contact() {
             <span>+880 1758806878</span>
           </div>
         </a>
-        <a
-          href="mailto:tawhidul433@g leading-[1em]mail.com"
-          className={leftPanelText}
-        >
+        <a href="mailto:tawhidul433@gmail.com" className={leftPanelText}>
           <div className="flex items-center gap-[0.7em]">
             <IoMdMail
               size="1.5em"

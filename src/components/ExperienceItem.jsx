@@ -18,8 +18,8 @@ function ExperienceItem({
           <div className="h-[2em] border-r border-[rgba(163,43,45,255)]"></div>
           <div className="absolute top-0 left-1/2 -translate-x-1/2 h-3 w-3 rounded-full bg-[rgba(163,43,45,255)]"></div>
         </div>
-        <div className="flex-1 flex flex-col items-stretch gap-[0.1em] font-roboto">
-          <p className="text-[1em] font-medium font-public-sans">{title}</p>
+        <div className="flex-1 flex flex-col items-stretch gap-[0.1em] ">
+          <p className="text-[1em] font-medium">{title}</p>
           <div className="flex justify-between gap-2 font-light">
             <span className="text-[0.7em] tracking-wider">{company}</span>
             <div className="flex gap-[0.4em] text-[0.7em]">
@@ -29,7 +29,7 @@ function ExperienceItem({
         </div>
       </div>
       {/* description */}
-      <p className={"text-justify " + rightPanelText}>{summery}</p>
+      <p className={"text-justify font-public-sans " + rightPanelText}>{summery}</p>
     </div>
   );
 }

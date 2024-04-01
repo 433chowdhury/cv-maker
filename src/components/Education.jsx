@@ -4,8 +4,8 @@ import EducationItem from "./EducationItem";
 function Education() {
   return (
     <div className=" pl-[2em] pr-[1em]">
-      <span className="text-[1.3em] font-semibold font-roboto">Education</span>
-      <div className="mt-[1em] flex flex-col gap-[1.5em] ">
+      <span className="text-[1.3em] font-bold font-public-sans ">Education</span>
+      <div className="mt-[1em] flex flex-col gap-[1em] ">
         {educations.map((item, index) => {
           return <EducationItem key={index} data={item} />; // NOSONAR
         })}
