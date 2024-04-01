@@ -65,7 +65,7 @@ export const leftPanelText = "text-[0.65em] leading-[1.1]";
 export const rightPanelText = "text-[0.7em] leading-[1.5]";
 
 const personalSummery =
-  "With working experience of more than 3 years, I am passionate about Software Development that deliver performance, elegance and robustness. Have a keen eye for details, comply with time constrains and provide deliverables as promised.";
+  "With working experience of more than 3 years, I am passionate about developing software that deliver performance, elegance and robustness. Have a keen eye for details, comply with time constrains and provide deliverables as promised.";
 
 OnlyCv.propTypes = {
   className: PropTypes.string,
